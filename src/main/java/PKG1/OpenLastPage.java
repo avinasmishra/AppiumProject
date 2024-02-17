@@ -6,6 +6,7 @@ import io.appium.java_client.android.Activity;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
+
 import javax.annotation.concurrent.Immutable;
 
 public class OpenLastPage extends BaseClass{
