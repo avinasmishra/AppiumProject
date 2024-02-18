@@ -1,4 +1,4 @@
-package E2EEcommerceAppTest;
+package PKG1;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,7 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class BaseTest {
+public class BrowserBaseTest {
     AndroidDriver driver;
     AppiumDriverLocalService service;
 
@@ -29,19 +29,9 @@ public class BaseTest {
         options.setDeviceName("AviPhone");
         options.setPlatformName("Android");
         options.setChromedriverExecutable("C:\\Users\\Avinash\\Documents\\chromedriver_win32\\chromedriver.exe");
-        options.setApp("C:\\Users\\Avinash\\IdeaProjects\\AppiumProject\\src\\main\\java\\APKFileRresource\\General-Store.apk");
-
+        options.setCapability("browserName","Chrome");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
-
-    public void longPressAction(WebElement element)
-    {
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("mobile: longClickGesture", ImmutableMap.of(
-                "elementId", ((RemoteWebElement) element).getId(),
-                "duration",2000
-        ));
     }
 
     @AfterClass
